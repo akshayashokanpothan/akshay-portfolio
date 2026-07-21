@@ -108,7 +108,7 @@ export function ProjectCard({ study, index, compact = false }: { study: WorkItem
             alt={study.thumbnailAlt ?? `${study.title} preview`}
             fill
             sizes="(max-width: 560px) 100vw, (max-width: 860px) 50vw, 25vw"
-            style={compact ? { objectFit: "cover", objectPosition: "top left" } : { objectFit: "contain", objectPosition: "center" }}
+            style={compact ? { objectFit: "cover", objectPosition: "top left" } : { objectFit: "cover", objectPosition: "center" }}
           />
         ) : Illustration ? (
           <Illustration />
