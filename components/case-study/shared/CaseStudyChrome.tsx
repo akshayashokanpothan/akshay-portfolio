@@ -34,7 +34,7 @@ export function ReadingProgress() {
 }
 
 /**
- * Case-study-specific utility bar — sits directly below the shared global Navbar.
+ * Case-study-specific utility bar - sits directly below the shared global Navbar.
  * Intentionally does NOT duplicate global nav links; only adds what every case
  * study uniquely needs: a way back to the homepage's work section, and reading time.
  */
@@ -70,7 +70,7 @@ export function CaseUtilityBar({ readingTime }: { readingTime: string }) {
   );
 }
 
-/* Sticky scroll-spy table of contents — desktop only (hidden by the page's own media query below 980px) */
+/* Sticky scroll-spy table of contents - desktop only (hidden by the page's own media query below 980px) */
 export function ScrollSpyTOC({ items }: { items: TocItem[] }) {
   const [active, setActive] = useState(items[0]?.id ?? "");
   useEffect(() => {
@@ -131,7 +131,7 @@ function CopyLinkButton() {
 /**
  * Ends every case study. If `href` is provided, the next project is real and
  * navigable via next/link. If it's omitted, the card renders a non-clickable
- * "Coming soon" state — never a link to a page that doesn't exist yet.
+ * "Coming soon" state - never a link to a page that doesn't exist yet.
  */
 export function NextProjectCard({
   title,

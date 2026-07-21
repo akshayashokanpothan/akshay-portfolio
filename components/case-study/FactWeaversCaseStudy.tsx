@@ -34,7 +34,7 @@ import { ReadingProgress, CaseUtilityBar, ScrollSpyTOC, NextProjectCard } from "
 import { NEXT_PROJECT } from "@/lib/data/work";
 
 /* ------------------------------------------------------------------ */
-/* Content — sourced only from the approved case study                 */
+/* Content - sourced only from the approved case study                 */
 /* ------------------------------------------------------------------ */
 
 const META = {
@@ -74,12 +74,12 @@ interface Challenge {
 }
 
 const CHALLENGES: Challenge[] = [
-  { n: "01", icon: Clock, title: "Manual & inefficient metric creation", problem: "Data teams spent significant time manually defining and stitching metrics instead of focusing on deeper analysis.", impact: "Insight generation slowed down across every team waiting on a metric.", why: "Every hour spent stitching metrics manually was an hour not spent on analysis — the platform's core value.", opportunity: "AI-assisted metric creation (solution pillar 01)" },
+  { n: "01", icon: Clock, title: "Manual & inefficient metric creation", problem: "Data teams spent significant time manually defining and stitching metrics instead of focusing on deeper analysis.", impact: "Insight generation slowed down across every team waiting on a metric.", why: "Every hour spent stitching metrics manually was an hour not spent on analysis the platform's core value.", opportunity: "AI-assisted metric creation (solution pillar 01)" },
   { n: "02", icon: Network, title: "Fragmented data-to-decision workflow", problem: "The journey from data onboarding to metric creation to dashboard building was disconnected across multiple steps.", impact: "Users lost context moving between steps, producing a broken end-to-end experience.", why: "A platform that can't carry context across its own workflow can't be trusted with a business's decisions.", opportunity: "A single connected flow, restructured through the information architecture" },
-  { n: "03", icon: UserCog, title: "High dependency on technical teams", problem: "Business stakeholders and executives relied heavily on data teams to generate reports and dashboards.", impact: "Delays and reduced agility in decision-making for the people actually making decisions.", why: "The platform's promise was self-serve insight — this dependency broke that promise at the last mile.", opportunity: "Role-based onboarding & access control (solution pillar 04)" },
-  { n: "04", icon: Sparkles, title: "Limited AI integration in core workflows", problem: "AI capabilities existed but weren't embedded into metric creation or dashboard generation.", impact: "AI functioned as an add-on rather than a core part of the experience.", why: "Bolted-on AI rarely gets used — it needed to live inside the workflows people already had.", opportunity: "AI-assisted metric creation & conversational data exploration (pillars 01–02)" },
-  { n: "05", icon: ShieldCheck, title: "Low trust in AI-generated insights", problem: "Users lacked visibility into how metrics and insights were generated — sources, logic, transformations.", impact: "Reduced confidence in AI outputs limited adoption of the platform's core differentiator.", why: "Trust is the gate to adoption — an unexplainable AI is an unused AI in enterprise settings.", opportunity: "\u201cAI must be explainable and actionable\u201d (design principle 01)" },
-  { n: "06", icon: Layers, title: "Cognitive overload in dashboard creation", problem: "Dashboard creation exposed too much complexity upfront, before users had context to use it.", impact: "Difficult to build or customize dashboards without technical knowledge or prior experience.", why: "Complexity shown too early reads as difficulty — even when the underlying task is simple.", opportunity: "Progressive disclosure & flexible dashboard filtering (principle 04, pillar 03)" },
+  { n: "03", icon: UserCog, title: "High dependency on technical teams", problem: "Business stakeholders and executives relied heavily on data teams to generate reports and dashboards.", impact: "Delays and reduced agility in decision-making for the people actually making decisions.", why: "The platform's promise was self-serve insight; this dependency broke that promise at the last mile.", opportunity: "Role-based onboarding & access control (solution pillar 04)" },
+  { n: "04", icon: Sparkles, title: "Limited AI integration in core workflows", problem: "AI capabilities existed but weren't embedded into metric creation or dashboard generation.", impact: "AI functioned as an add-on rather than a core part of the experience.", why: "Bolted-on AI rarely gets used; it needed to live inside the workflows people already had.", opportunity: "AI-assisted metric creation & conversational data exploration (pillars 01–02)" },
+  { n: "05", icon: ShieldCheck, title: "Low trust in AI-generated insights", problem: "Users lacked visibility into how metrics and insights were generated such as sources, logic, transformations.", impact: "Reduced confidence in AI outputs limited adoption of the platform's core differentiator.", why: "Trust is the gate to adoption; an unexplainable AI is an unused AI in enterprise settings.", opportunity: "\u201cAI must be explainable and actionable\u201d (design principle 01)" },
+  { n: "06", icon: Layers, title: "Cognitive overload in dashboard creation", problem: "Dashboard creation exposed too much complexity upfront, before users had context to use it.", impact: "Difficult to build or customize dashboards without technical knowledge or prior experience.", why: "Complexity shown too early reads as difficulty, even when the underlying task is simple.", opportunity: "Progressive disclosure & flexible dashboard filtering (principle 04, pillar 03)" },
 ];
 
 const OWNERSHIP = { owned: "Owned", led: "Led", contributed: "Contributed", shared: "Shared with team" } as const;
@@ -96,9 +96,9 @@ const MY_CONTRIBUTION: Contribution[] = [
   { category: "Product discovery", icon: Compass, level: OWNERSHIP.contributed, detail: "Worked with the founder, product owners, and principal designer to translate business goals into design requirements and constraints.", outcome: "Aligned design decisions with technical feasibility before any screen was drawn." },
   { category: "UX strategy", icon: Target, level: OWNERSHIP.led, detail: "Defined the design principles that guided metric creation, AI interaction, and dashboard experience across the platform.", outcome: "Gave the wider team a shared decision-making framework, not just a visual style." },
   { category: "Information architecture", icon: Network, level: OWNERSHIP.contributed, detail: "Contributed to restructuring the platform into a modular onboard → define → visualize → share flow, alongside the principal designer.", outcome: "Reduced context-switching across what had been a fragmented, multi-step journey." },
-  { category: "AI experience design", icon: Sparkles, level: OWNERSHIP.led, detail: "Owned the conversational, AI-assisted metric creation feature end to end — from interaction model to explainability pattern.", outcome: "The feature most directly tied to the platform's 3–4× speed improvement." },
-  { category: "Dashboard experience", icon: BarChart3, level: OWNERSHIP.owned, detail: "Owned dashboard customization and the real-time filtering system — dropdowns, text, number, and date-based conditions.", outcome: "Turned static dashboards into a self-serve exploration tool for non-technical users." },
-  { category: "Design systems", icon: Boxes, level: OWNERSHIP.contributed, detail: "Designed dashboard theming and contributed component patterns to the shared system layer — cards, charts, and role-based states.", outcome: "Fed directly into a component library reused across three major platform surfaces." },
+  { category: "AI experience design", icon: Sparkles, level: OWNERSHIP.led, detail: "Owned the conversational, AI-assisted metric creation feature end to end, from interaction model to explainability pattern.", outcome: "The feature most directly tied to the platform's 3–4× speed improvement." },
+  { category: "Dashboard experience", icon: BarChart3, level: OWNERSHIP.owned, detail: "Owned dashboard customization and the real-time filtering system; dropdowns, text, number, and date-based conditions.", outcome: "Turned static dashboards into a self-serve exploration tool for non-technical users." },
+  { category: "Design systems", icon: Boxes, level: OWNERSHIP.contributed, detail: "Designed dashboard theming and contributed component patterns to the shared system layer; cards, charts, and role-based states.", outcome: "Fed directly into a component library reused across three major platform surfaces." },
   { category: "Cross-functional collaboration", icon: Handshake, level: OWNERSHIP.shared, detail: "Worked closely with product, engineering, and data teams throughout to ensure feasibility of AI-driven workflows.", outcome: "Kept design decisions grounded in what was actually shippable within the 6-month timeline." },
   { category: "Developer handoff", icon: GitBranch, level: OWNERSHIP.contributed, detail: "Documented interaction states, permission logic, and component behavior for engineering handoff on owned workflows.", outcome: "Reduced back-and-forth during implementation of the metric creation and dashboard flows." },
 ];
@@ -115,16 +115,16 @@ const ROLE_ITEMS = [
   { title: "Metric creation experience", detail: "Enhanced the metric creation flow for basic and composite metrics, simplifying complex configuration." },
   { title: "Conversational metric creation (AI)", detail: "Led the design of an AI-driven feature for creating metrics instantly through conversational input." },
   { title: "User onboarding & role-based setup", detail: "Designed onboarding that differentiates BI users and admin users for structured organization setup." },
-  { title: "Dashboard customization & controls", detail: "Built flexible filtering — dropdowns, text, number, and date-based inputs — for dashboard views." },
+  { title: "Dashboard customization & controls", detail: "Built flexible filtering; dropdowns, text, number, and date-based inputs for dashboard views." },
   { title: "Visual design & theming", detail: "Designed dashboard themes for visual consistency across data-heavy interfaces." },
   { title: "Cross-functional collaboration", detail: "Worked closely with product, engineering, and data teams to ensure feasibility of AI-driven workflows." },
 ];
 
 const PRINCIPLES = [
-  { n: "01", icon: ShieldCheck, title: "AI must be explainable and actionable", detail: "Every AI-generated metric needed to clearly communicate how it was derived, so users could validate outputs and act with confidence.", implication: "Every AI surface ships with a visible reasoning trail, not just an output.", business: "Higher enterprise adoption of AI features — the top blocker was trust, not capability." },
+  { n: "01", icon: ShieldCheck, title: "AI must be explainable and actionable", detail: "Every AI-generated metric needed to clearly communicate how it was derived, so users could validate outputs and act with confidence.", implication: "Every AI surface ships with a visible reasoning trail, not just an output.", business: "Higher enterprise adoption of AI features the top blocker was trust, not capability." },
   { n: "02", icon: Layers, title: "From metric creation to insight in one flow", detail: "I designed a connected workflow so users move seamlessly from defining metrics to generating and visualizing insights.", implication: "Metric creation, exploration, and visualization share one continuous IA, not separate tools.", business: "Fewer drop-offs between steps that used to be handed off between teams." },
   { n: "03", icon: Users, title: "Enable non-technical users without limiting power", detail: "Simplified interactions for business users, while retaining flexibility for advanced configuration.", implication: "Every guided flow has an escape hatch into advanced configuration.", business: "Widened the addressable user base beyond data teams without losing power users." },
-  { n: "04", icon: Boxes, title: "Progressive disclosure of complexity", detail: "Flows reveal complexity progressively — users start simple, and go deeper only when they need to.", implication: "Default views stay minimal; configuration surfaces expand on demand.", business: "Reduced onboarding drop-off caused by upfront complexity." },
+  { n: "04", icon: Boxes, title: "Progressive disclosure of complexity", detail: "Flows reveal complexity progressively, users start simple, and go deeper only when they need to.", implication: "Default views stay minimal; configuration surfaces expand on demand.", business: "Reduced onboarding drop-off caused by upfront complexity." },
   { n: "05", icon: SlidersHorizontal, title: "Flexible & customizable exploration", detail: "Flexible filtering lets users tailor dashboards to their context without breaking system consistency.", implication: "Filtering is a first-class system, not a per-dashboard configuration option.", business: "Reduced one-off dashboard requests routed through data teams." },
 ];
 
@@ -156,7 +156,7 @@ const WORKFLOWS: Workflow[] = [
     steps: ["Select data entity", "Define logic", "Set dimensions", "Preview", "Publish"],
     aiSteps: ["Enter prompt", "Generate metric", "Review", "Configure", "Publish"],
     impact: "Reduced time and effort required to define metrics, enabling faster, self-serve analytics.",
-    insight: "AI-assisted creation reduces setup complexity and accelerates metric definition compared to traditional workflows — supporting time-based, categorical, and non-dimensional configurations.",
+    insight: "AI-assisted creation reduces setup complexity and accelerates metric definition compared to traditional workflows; supporting time-based, categorical, and non-dimensional configurations.",
     icon: Sparkles,
     decision: "I considered replacing structured configuration with AI entirely, but kept both paths. Business users default to the conversational flow; analysts who need precise control fall back to the structured one. Neither path was allowed to feel like a fallback.",
     shots: [
@@ -168,13 +168,13 @@ const WORKFLOWS: Workflow[] = [
   {
     tag: "Workflow 02",
     title: "Exploring data with AI",
-    intro: "AI interactions were designed to enable intuitive data exploration — users interact with existing metrics through a conversational interface, shifting the experience from static dashboards to interactive decision-making.",
+    intro: "AI interactions were designed to enable intuitive data exploration, users interact with existing metrics through a conversational interface, shifting the experience from static dashboards to interactive decision-making.",
     steps: ["Ask query", "AI generates explainable insight", "Explore", "Refine", "Compare", "Apply to dashboard / decision"],
     aiSteps: null,
     impact: "Improved accessibility of insights and increased confidence in AI-driven outputs.",
-    insight: "Explainable AI — reasoning, data sources, and assumptions surfaced with every response — helped bridge the gap between data complexity and user understanding.",
+    insight: "Explainable AI: reasoning, data sources, and assumptions surfaced with every response - helped bridge the gap between data complexity and user understanding.",
     icon: MessageSquare,
-    decision: "The alternative was a black-box answer with a confidence score. I chose to always show reasoning and sources instead — slower to read, but it's what made enterprise users willing to act on an AI-generated number.",
+    decision: "The alternative was a black-box answer with a confidence score. I chose to always show reasoning and sources instead: slower to read, but it's what made enterprise users willing to act on an AI-generated number.",
     shots: [
       { src: "/projects/factweavers/factweavers-universal-ai.png", alt: "FactWeavers Universal AI conversational analytics view generating a top-clients chart from a natural-language question." },
       { src: "/projects/factweavers/factweavers-save-as-metric.png", alt: "FactWeavers save-as-metric modal showing calculation logic, unit, default dimension, time context, and time comparison settings." },
@@ -183,13 +183,13 @@ const WORKFLOWS: Workflow[] = [
   {
     tag: "Workflow 03",
     title: "Building & customizing dashboards",
-    intro: "Dashboard creation was redesigned to support flexible visualization and real-time customization — users build with predefined components and refine views through dynamic filtering.",
+    intro: "Dashboard creation was redesigned to support flexible visualization and real-time customization.Users build with predefined components and refine views through dynamic filtering.",
     steps: ["Select dimension", "Choose condition (equals / contains / range)", "Define value or range", "Apply filter", "Dashboard updates in real time"],
     aiSteps: null,
     impact: "Reduced dependency on data teams, enabling faster, self-serve decision-making.",
-    insight: "Treating filtering as an interactive system — not a static configuration — turned dashboards into dynamic exploration tools for both simple and advanced workflows.",
+    insight: "Treating filtering as an interactive system, not a static configuration. Turned dashboards into dynamic exploration tools for both simple and advanced workflows.",
     icon: SlidersHorizontal,
-    decision: "Real-time updates on every filter change felt magical in demos but strained performance at scale. I prioritized perceived performance — optimistic UI and progressive updates — over guaranteeing instant recalculation on every dataset size.",
+    decision: "Real-time updates on every filter change felt magical in demos but strained performance at scale. I prioritized perceived performance, optimistic UI and progressive updates over guaranteeing instant recalculation on every dataset size.",
     shots: [
       { src: "/projects/factweavers/factweavers-dashboard-builder.png", alt: "FactWeavers dashboard builder with the dataset panel open, showing a selected dataset and its attributes ready to add to the canvas." },
       { src: "/projects/factweavers/factweavers-filter-controls.png", alt: "FactWeavers filter control configuration panel, mapping a department dropdown filter to multiple dashboard widgets." },
@@ -203,7 +203,7 @@ const WORKFLOWS: Workflow[] = [
     steps: ["User entry", "Identify role", "Business / analyst / admin path", "Setup & configure", "Validate & publish"],
     aiSteps: null,
     impact: "Reduced onboarding friction, enabling faster adoption across business and technical teams.",
-    insight: "Designing onboarding as a role-aware system — rather than a linear flow — aligned the platform with real-world team structures.",
+    insight: "Designing onboarding as a role-aware system; rather than a linear flow - aligned the platform with real-world team structures.",
     icon: UserCog,
     decision: "A single onboarding path was simpler to build, but it forced business users through steps meant for admins. I split entry points by role instead, accepting more upfront design and engineering work for a much shorter path to first value.",
     shots: [
@@ -215,9 +215,9 @@ const WORKFLOWS: Workflow[] = [
 ];
 
 const SYSTEM_LAYERS = [
-  { n: "1", title: "Composable component library", detail: "Data-carrying primitives — cards, inputs, controls — built to hold metrics, AI output, and interactive states within one consistent shell.", tags: ["Composable", "State-driven", "AI-aware zone"], impact: ["One shell resolved once, cutting repeated design effort across three major surfaces", "AI summary as a composable slot let engineering ship new AI-powered card variants without a design dependency", "Reduced new metric type implementation from multi-week design cycles to configuration decisions"] },
-  { n: "2", title: "Role-aware, permission-driven UI", detail: "Component behavior, action visibility, and information depth adapt by role — each persona sees exactly what they need, with no interface clutter.", tags: ["Role-aware", "Permission-driven", "Contextually adaptive"], impact: ["One adaptive system served three distinct personas — no duplicate interfaces, no parallel design tracks", "Surfacing the access model in the UI (not just backend logic) reduced onboarding confusion and support escalation", "Role-conditional rendering meant new features automatically inherited correct access behavior"] },
-  { n: "3", title: "Intent-mapped visualization system", detail: "A constrained set of chart types, readable at card scale and expandable to full screen, each mapped to a specific analytical intent.", tags: ["Intent-mapped", "Scale-adaptive", "Anomaly-aware"], impact: ["Constraining chart types to analytical intent prevented visualization sprawl and reduced misinterpretation", "Anomaly as a first-class data state meant engineers inherited exception handling from the system", "Same component served card-level scanning and deep analytical exploration — zero parallel implementations"] },
+  { n: "1", title: "Composable component library", detail: "Data-carrying primitives; cards, inputs, controls built to hold metrics, AI output, and interactive states within one consistent shell.", tags: ["Composable", "State-driven", "AI-aware zone"], impact: ["One shell resolved once, cutting repeated design effort across three major surfaces", "AI summary as a composable slot let engineering ship new AI-powered card variants without a design dependency", "Reduced new metric type implementation from multi-week design cycles to configuration decisions"] },
+  { n: "2", title: "Role-aware, permission-driven UI", detail: "Component behavior, action visibility, and information depth adapt by role, each persona sees exactly what they need, with no interface clutter.", tags: ["Role-aware", "Permission-driven", "Contextually adaptive"], impact: ["One adaptive system served three distinct personas, no duplicate interfaces, no parallel design tracks", "Surfacing the access model in the UI (not just backend logic) reduced onboarding confusion and support escalation", "Role-conditional rendering meant new features automatically inherited correct access behavior"] },
+  { n: "3", title: "Intent-mapped visualization system", detail: "A constrained set of chart types, readable at card scale and expandable to full screen, each mapped to a specific analytical intent.", tags: ["Intent-mapped", "Scale-adaptive", "Anomaly-aware"], impact: ["Constraining chart types to analytical intent prevented visualization sprawl and reduced misinterpretation", "Anomaly as a first-class data state meant engineers inherited exception handling from the system", "Same component served card-level scanning and deep analytical exploration, zero parallel implementations"] },
 ];
 
 const PERMISSION_MATRIX = {
@@ -231,11 +231,11 @@ const PERMISSION_MATRIX = {
 };
 
 const TRADEOFFS = [
-  { n: "01", title: "Simplicity vs. flexibility", detail: "Simplified interfaces reduced onboarding friction but limited advanced use cases. I addressed this with progressive disclosure — guided workflows that unlock deeper configuration as needed." },
-  { n: "02", title: "AI automation vs. user control", detail: "Full automation accelerated workflows but reduced trust in high-stakes scenarios. I positioned AI as collaborative — offering suggestions and explainability while keeping users in control of final outputs." },
+  { n: "01", title: "Simplicity vs. flexibility", detail: "Simplified interfaces reduced onboarding friction but limited advanced use cases. I addressed this with progressive disclosure, guided workflows that unlock deeper configuration as needed." },
+  { n: "02", title: "AI automation vs. user control", detail: "Full automation accelerated workflows but reduced trust in high-stakes scenarios. I positioned AI as collaborative; offering suggestions and explainability while keeping users in control of final outputs." },
   { n: "03", title: "Standardization vs. customization", detail: "Strict standardization limited adaptability. I introduced reusable components combined with configurable filters and metrics, balancing consistency with flexibility." },
   { n: "04", title: "Guided experience vs. exploratory freedom", detail: "Guided flows improved onboarding but constrained experienced users. Entry points now transition from structured guidance to open-ended exploration." },
-  { n: "05", title: "Performance vs. real-time interaction", detail: "Real-time interaction introduced performance constraints at scale. I prioritized perceived performance — optimized feedback loops and progressive updates over raw backend speed." },
+  { n: "05", title: "Performance vs. real-time interaction", detail: "Real-time interaction introduced performance constraints at scale. I prioritized perceived performance, optimized feedback loops and progressive updates over raw backend speed." },
 ];
 
 const OUTCOME_SUMMARY = [
@@ -246,14 +246,14 @@ const OUTCOME_SUMMARY = [
 ];
 
 const IMPACT_CATEGORIES = [
-  { n: "01", title: "Product & user impact", items: ["Reduced time to define and configure metrics through structured and AI-assisted workflows", "Enabled non-technical users to explore data independently, without relying on data teams", "Improved clarity in AI-generated insights through explainability — reasoning, sources, assumptions", "Increased decision-making confidence by allowing users to explore, refine, and compare outputs"] },
-  { n: "02", title: "System & design impact", items: ["Introduced a modular architecture separating onboarding, metric definition, exploration, and visualization", "Established consistent interaction patterns across workflows, reducing cognitive load", "Created a shared system layer — design system, components, permissions — to ensure scalability", "Enabled progressive disclosure of complexity, supporting both business and advanced users"] },
+  { n: "01", title: "Product & user impact", items: ["Reduced time to define and configure metrics through structured and AI-assisted workflows", "Enabled non-technical users to explore data independently, without relying on data teams", "Improved clarity in AI-generated insights through explainability, reasoning, sources, assumptions", "Increased decision-making confidence by allowing users to explore, refine, and compare outputs"] },
+  { n: "02", title: "System & design impact", items: ["Introduced a modular architecture separating onboarding, metric definition, exploration, and visualization", "Established consistent interaction patterns across workflows, reducing cognitive load", "Created a shared system layer, design system, components, permissions to ensure scalability", "Enabled progressive disclosure of complexity, supporting both business and advanced users"] },
   { n: "03", title: "Business & team impact", items: ["Accelerated onboarding and activation by simplifying initial setup", "Reduced dependency on data teams by enabling self-serve analytics", "Improved cross-functional collaboration through clearer role-based workflows", "Positioned the platform as a decision-making tool rather than a reporting system"] },
 ];
 
 const LESSONS = [
   "Designing scalable data systems means balancing flexibility with clarity across diverse user roles.",
-  "Simplifying complexity is more effective than hiding it — structured guidance is key.",
+  "Simplifying complexity is more effective than hiding it; structured guidance is key.",
   "AI is most valuable when it's explainable and integrated into workflows, not isolated as a feature.",
   "Strong information architecture is foundational to scalable product experiences.",
 ];
@@ -262,7 +262,7 @@ const IA_STAGES = ["Onboard", "Define & create (metrics & AI)", "Visualize (dash
 
 const IA_DESCRIPTIONS = [
   "Users onboard their data sources and are guided into the system by role.",
-  "Metrics are defined and generated — with AI interaction embedded directly into the metric-creation flow, not bolted on afterward.",
+  "Metrics are defined and generated with AI interaction embedded directly into the metric-creation flow, not bolted on afterward.",
   "Metrics become dynamic, filterable dashboards viewable across yearly, monthly, weekly, and real-time windows.",
   "Dashboards are shared and published across stakeholders, and insights turn into action.",
 ];
@@ -314,7 +314,7 @@ interface Shot {
   aspect?: string;
 }
 
-/* Real product screenshot, presented cleanly — no redraws, no device chrome */
+/* Real product screenshot, presented cleanly no redraws, no device chrome */
 function ProductShot({ src, alt, aspect = "3024 / 1964", priority = false }: { src: string; alt: string; aspect?: string; priority?: boolean }) {
   return (
     <div
@@ -449,15 +449,15 @@ function QuickOverview() {
                   FactWeavers is an AI-powered decision intelligence platform that transforms raw data into
                   structured metrics, dashboards, and actionable insights. Teams onboard data sources, define
                   metrics, and convert them into dynamic dashboards tracking performance across yearly, monthly,
-                  weekly, and real-time views — shared across internal teams and external clients.
+                  weekly, and real-time views will shared across internal teams and external clients.
                 </p>
                 <p style={{ fontFamily: fontBody, fontSize: 16, lineHeight: 1.75, color: COLORS.inkSoft, margin: 0 }}>
-                  At its core, an AI layer lets users interact with their data conversationally — asking
+                  At its core, an AI layer lets users interact with their data conversationally, asking
                   questions, generating insights, and exploring predictive trends. Beyond visualization, the
                   platform supports goal and target setting at the metric level.
                 </p>
                 <p style={{ fontFamily: fontBody, fontSize: 16, lineHeight: 1.75, color: COLORS.inkSoft, margin: 0 }}>
-                  While functionally robust, the experience lacked cohesion — workflows from onboarding to
+                  While functionally robust, the experience lacked cohesion; workflows from onboarding to
                   insight generation were fragmented, and AI wasn&apos;t deeply embedded into decision-making. This
                   project focused on transforming FactWeavers into a unified, AI-native system.
                 </p>
@@ -499,7 +499,7 @@ function QuickOverview() {
         <Reveal delay={180} style={{ marginTop: 40 }}>
           <ProductShot src="/projects/factweavers/factweavers-home-discover.png" alt="FactWeavers Discover / Insights Hub showing a catalog of metric cards with trend charts and AI summaries." />
           <p style={{ fontFamily: fontBody, fontSize: 13, color: COLORS.muted, marginTop: 10 }}>
-            Discover — the entry point where users browse the existing metric and dashboard catalog before creating something new.
+            Discover the entry point where users browse the existing metric and dashboard catalog before creating something new.
           </p>
         </Reveal>
       </Container>
@@ -519,7 +519,7 @@ function ContributionSection() {
         <SectionHeading
           eyebrow="My contribution"
           title="What I owned, on a four-designer team"
-          subtitle="Not everything on this page was mine alone. Here's exactly where I held the pen — and where I worked in support of the wider team."
+          subtitle="Not everything on this page was mine alone. Here's exactly where I held the pen and where I worked in support of the wider team."
           maxWidth={680}
         />
         <div style={{ display: "flex", gap: 16, marginTop: 28, flexWrap: "wrap" }}>
@@ -605,7 +605,7 @@ function ProblemSection() {
         </div>
         <Reveal delay={200} style={{ marginTop: 32, maxWidth: 680 }}>
           <p style={{ fontFamily: fontBody, fontSize: 15.5, lineHeight: 1.6, color: COLORS.inkSoft, fontStyle: "italic" }}>
-            This wasn&apos;t a feature-level problem — it was a system-level challenge involving workflow
+            This wasn&apos;t a feature-level problem, it was a system-level challenge involving workflow
             fragmentation, trust in AI, and enabling fast, independent decision-making.
           </p>
         </Reveal>
@@ -628,7 +628,7 @@ function RoleSection() {
     <section id="role" style={{ padding: "72px 0", scrollMarginTop: 96 }}>
       <Container>
         <div style={{ display: "grid", gridTemplateColumns: "0.85fr 1.15fr", gap: 56 }} className="role-grid">
-          <SectionHeading eyebrow="My role" title="Where I focused, on a four-designer team" subtitle="I contributed to key platform workflows — how users create metrics, interact with AI, and customize dashboards." maxWidth={420} />
+          <SectionHeading eyebrow="My role" title="Where I focused, on a four-designer team" subtitle="I contributed to key platform workflows, how users create metrics, interact with AI, and customize dashboards." maxWidth={420} />
           <div style={{ display: "flex", flexDirection: "column" }}>
             {ROLE_ITEMS.map((r, i) => (
               <Reveal delay={i * 60} key={r.title} style={{ padding: "18px 0", borderTop: i === 0 ? "none" : `1px solid ${COLORS.border}` }}>
@@ -683,7 +683,7 @@ function PrinciplesSection() {
         </div>
 
         <Reveal delay={120} style={{ marginTop: 40, borderRadius: 14, padding: "28px 32px", background: COLORS.white, border: `1px solid ${COLORS.border}` }}>
-          <div style={{ fontFamily: fontMono, fontSize: 11.5, textTransform: "uppercase", letterSpacing: "0.05em", color: COLORS.muted, marginBottom: 16 }}>Solution — four pillars</div>
+          <div style={{ fontFamily: fontMono, fontSize: 11.5, textTransform: "uppercase", letterSpacing: "0.05em", color: COLORS.muted, marginBottom: 16 }}>Solution four pillars</div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }} className="pillar-grid">
             {PILLARS.map((p) => (
               <div key={p.n}>
@@ -710,7 +710,7 @@ function PrinciplesSection() {
 }
 
 /* ------------------------------------------------------------------ */
-/* Information architecture — interactive flow                          */
+/* Information architecture - interactive flow                          */
 /* ------------------------------------------------------------------ */
 
 function IAFlow() {
@@ -754,7 +754,7 @@ function IAFlow() {
           <div style={{ marginTop: 20, borderTop: `1px solid ${COLORS.border}`, paddingTop: 20 }}>
             <div style={{ fontFamily: fontMono, fontSize: 11.5, textTransform: "uppercase", letterSpacing: "0.05em", color: COLORS.muted, marginBottom: 6 }}>System layer</div>
             <p style={{ fontFamily: fontBody, fontSize: 14.5, lineHeight: 1.6, color: COLORS.inkSoft, margin: 0, maxWidth: 640 }}>
-              A shared system layer — design system, themes, charts, and permissions — runs beneath all four
+              A shared system layer; design system, themes, charts, and permissions runs beneath all four
               stages, ensuring consistency, scalability, and alignment across every workflow.
             </p>
           </div>
@@ -770,7 +770,7 @@ function IAFlow() {
 }
 
 /* ------------------------------------------------------------------ */
-/* Workflow sections — alternating layout                               */
+/* Workflow sections - alternating layout                               */
 /* ------------------------------------------------------------------ */
 
 
@@ -795,7 +795,7 @@ function WorkflowSection({ workflow, index }: { workflow: Workflow; index: numbe
         )}
         {workflow.decision && (
           <Reveal delay={80}>
-            <Callout kind="decision" title={`Why this approach — ${workflow.title.toLowerCase()}`}>{workflow.decision}</Callout>
+            <Callout kind="decision" title={`Why this approach? ${workflow.title.toLowerCase()}`}>{workflow.decision}</Callout>
           </Reveal>
         )}
       </Container>
@@ -849,7 +849,7 @@ function CardAnatomy() {
           ))}
         </div>
         <div style={{ fontFamily: fontBody, fontSize: 12, color: COLORS.inkSoft, background: COLORS.surface, borderRadius: 7, padding: "9px 10px", marginBottom: 10 }}>
-          AI summary — reasoning and anomaly flagged inline with the chart.
+          AI summary: reasoning and anomaly flagged inline with the chart.
         </div>
         <div style={{ fontFamily: fontBody, fontSize: 11.5, color: COLORS.muted }}>Last updated Jan 14, 2025 · Category name</div>
       </div>
@@ -903,7 +903,7 @@ function SystemDesignSection() {
   return (
     <section id="system" style={{ padding: "72px 0", scrollMarginTop: 96 }}>
       <Container>
-        <SectionHeading eyebrow="Design system & system layer" title="A behavioral layer, not a visual one" subtitle="Structured across three interconnected layers — components, role-based behavior, and visualization — working together to enable scalable, AI-driven experiences." maxWidth={700} />
+        <SectionHeading eyebrow="Design system & system layer" title="A behavioral layer, not a visual one" subtitle="Structured across three interconnected layers: components, role-based behavior, and visualization working together to enable scalable, AI-driven experiences." maxWidth={700} />
 
         <Reveal delay={100} style={{ marginTop: 44 }}>
           <div style={{ fontFamily: fontMono, fontSize: 12, color: COLORS.accent, marginBottom: 12 }}>{SYSTEM_LAYERS[0].n} · {SYSTEM_LAYERS[0].title}</div>
@@ -931,7 +931,7 @@ function SystemDesignSection() {
           <div style={{ background: COLORS.white, border: `1px solid ${COLORS.border}`, borderRadius: 14, padding: 22 }}>
             <PermissionMatrixTable />
             <p style={{ fontFamily: fontBody, fontSize: 13, lineHeight: 1.6, color: COLORS.muted, marginTop: 16, marginBottom: 0 }}>
-              Key design decision — the access model is reflected in the UI, not just backend logic. Role-awareness
+              Key design decision: the access model is reflected in the UI, not just backend logic. Role-awareness
               is a first-class system constraint, not a post-launch patch.
             </p>
           </div>

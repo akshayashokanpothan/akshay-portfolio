@@ -45,42 +45,46 @@ export const WORK_ITEMS: WorkItem[] = [
     featured: true,
   },
   {
-    slug: "sbi-yono-login",
-    href: null,
-    tag: "Fintech · UX case study",
-    title: "Revamping the SBI YONO Login Experience",
-    role: "Independent UX Case Study",
-    timeline: "2025",
-    summary:
-      "A UX exploration focused on rethinking the SBI YONO login experience to make authentication clearer, more intuitive, and easier to navigate.",
-    impact: "An independent case study not commissioned or published by SBI.",
-    illustration: "sbi",
-  },
-  {
     slug: "universal-ai",
     href: null,
     tag: "AI · Business intelligence",
     title: "Universal AI; Data into Actionable Insights",
     role: "Product Designer · FactWeavers",
-    timeline: "2025",
+    timeline: "2025-26",
     summary:
       "A conversational AI experience for FactWeavers that lets users interact with business data in natural language, discover insights, and move from AI-generated responses toward reusable metrics and dashboards.",
     impact: "Transformed complex BI workflows into a conversational AI experience for faster insight discovery and dashboard creation.",
     thumbnail: "/projects/factweavers/factweavers-universal-ai.png",
     thumbnailAlt: "FactWeavers Universal AI conversational analytics view generating a chart from a natural-language question.",
   },
+
   {
     slug: "quickbot",
     href: null,
     tag: "Conversational commerce · AI",
     title: "Quickbot; Easy & Quick E-Commerce Chat Experiences",
     role: "Product Designer · Innovatily",
-    timeline: "2023",
+    timeline: "2024-25",
     summary:
       "A conversational commerce POC exploring how customers could discover, compare, and evaluate products through an AI-powered chatbot instead of navigating a traditional e-commerce site — explored for D2C shopping contexts relevant to brands like Atomberg and Wakefit.",
     impact: "A conceptual POC; not an official partnership or deployment",
     illustration: "quickbot",
   },
+
+  {
+    slug: "sbi-yono-login",
+    href: null,
+    tag: "Fintech · UX case study",
+    title: "Revamping the SBI YONO Login Experience",
+    role: "Independent UX Case Study",
+    timeline: "2024",
+    summary:
+      "A UX exploration focused on rethinking the SBI YONO login experience to make authentication clearer, more intuitive, and easier to navigate.",
+    impact: "An independent case study not commissioned or published by SBI.",
+    illustration: "sbi",
+  },
+  
+  
   {
     slug: "behance",
     href: "https://www.behance.net/akshayashokan1",

@@ -30,7 +30,7 @@ import { Callout, BackToTop } from "@/components/ui/CaseStudyPrimitives";
 import { ReadingProgress, CaseUtilityBar, ScrollSpyTOC, NextProjectCard, TocItem } from "@/components/case-study/shared/CaseStudyChrome";
 
 /* ------------------------------------------------------------------ */
-/* Product's own visual identity — used ONLY where we're literally     */
+/* Product's own visual identity - used ONLY where we're literally     */
 /* documenting the AsteraDocs design system, never as the page's own   */
 /* palette. The portfolio's ink/teal system stays dominant everywhere  */
 /* else, per the brief.                                                */
@@ -73,7 +73,7 @@ interface Problem {
 
 const PROBLEMS: Problem[] = [
   { icon: FolderTree, title: "Documents scattered across departments", detail: "Files lived across shared drives, email threads, and messaging platforms with no single source of truth." },
-  { icon: ClipboardCheck, title: "No structured approval workflows", detail: "Approvals happened informally — over chat or email — with no clear record of who approved what, or when." },
+  { icon: ClipboardCheck, title: "No structured approval workflows", detail: "Approvals happened informally; over chat or email with no clear record of who approved what, or when." },
   { icon: KeyRound, title: "Poor experience managing roles & access", detail: "Granting or auditing access meant depending on IT, with little visibility into who could see or edit what." },
   { icon: History, title: "Difficult version tracking", detail: "Teams struggled to confirm which copy of a document was current, leading to duplicate and conflicting versions." },
   { icon: ScanEye, title: "Limited audit visibility", detail: "Compliance and risk teams had no centralized way to review activity, access history, or document lifecycle." },
@@ -96,13 +96,13 @@ const PILLARS = [
 /* ------------------------------------------------------------------ */
 
 const ROLE_ITEMS = [
-  { title: "UX research & problem framing", detail: "Framed the core coordination problem behind enterprise document management — not just file storage, but people, permissions, and process." },
+  { title: "UX research & problem framing", detail: "Framed the core coordination problem behind enterprise document management system: not just file storage, but people, permissions, and process." },
   { title: "Persona definition & user modeling", detail: "Defined three role-based archetypes to represent how operational, managerial, and governance users experience the same system differently." },
-  { title: "Information architecture", detail: "Structured the full navigation model — documents, approvals, version control, team, admin, and integrations — into one coherent hierarchy." },
+  { title: "Information architecture", detail: "Structured the full navigation model: documents, approvals, version control, team, admin, and integrations into one coherent hierarchy." },
   { title: "Document upload & metadata design", detail: "Designed the file-selection-to-completion upload flow, including metadata and classification steps." },
   { title: "Permission & approval workflow design", detail: "Designed role-aware permission states and the request → review → approve/reject workflow." },
   { title: "Version control experience", detail: "Designed version listing, history, comparison, and branching views for non-technical users." },
-  { title: "Team & admin control design", detail: "Designed team/department management and the admin panel — users, roles, activity logs, storage." },
+  { title: "Team & admin control design", detail: "Designed team/department management and the admin panel: users, roles, activity logs, storage." },
   { title: "Integration experience & interaction design", detail: "Took the product from wireframes through high-fidelity UI, a reusable component system, and an interactive prototype, including the third-party integrations experience." },
 ];
 
@@ -126,7 +126,7 @@ const ARCHETYPES: Archetype[] = [
     icon: Upload,
     needs: ["Upload documents", "Organize files", "Share files", "Maintain folder structure", "Archive documents"],
     pains: ["Repetitive organization", "Duplicate versions", "Limited activity visibility", "Reliance on email or messaging for sharing"],
-    complexity: "Task-level — simple, frequent actions inside a stable folder structure.",
+    complexity: "Task-level: simple, frequent actions inside a stable folder structure.",
   },
   {
     level: "Role 02 · Power user",
@@ -134,7 +134,7 @@ const ARCHETYPES: Archetype[] = [
     icon: ShieldIcon,
     needs: ["Manage sensitive documents", "Control access", "Track versions", "Prepare for audits", "Manage document lifecycle"],
     pains: ["Difficulty identifying latest versions", "Limited renewal alerts", "Folder and naming conflicts", "Dependence on IT for permissions"],
-    complexity: "Team-level — access control and lifecycle decisions across a department.",
+    complexity: "Team-level: access control and lifecycle decisions across a department.",
   },
   {
     level: "Role 03 · Strategic / governance user",
@@ -142,7 +142,7 @@ const ARCHETYPES: Archetype[] = [
     icon: ScanEye,
     needs: ["Organization-wide oversight", "Retention policies", "Access visibility", "Audit preparation", "Risk monitoring"],
     pains: ["Fragmented departmental systems", "Inconsistent classification", "Limited risk visibility", "Weak integration with enterprise systems"],
-    complexity: "System-level — oversight and policy across every team and document in the org.",
+    complexity: "System-level: oversight and policy across every team and document in the org.",
   },
 ];
 
@@ -154,7 +154,7 @@ const PRINCIPLES = [
   { n: "01", icon: Eye, title: "Make document state visible", detail: "Users should always understand current version, approval status, ownership, and permissions at a glance." },
   { n: "02", icon: Layers, title: "Progressive complexity", detail: "Common actions stay simple. Advanced controls surface only when a user actually needs them." },
   { n: "03", icon: KeyRound, title: "Permission transparency", detail: "Users should always understand who can view, edit, share, or approve a given document." },
-  { n: "04", icon: MessageSquareWarning, title: "Build trust through feedback", detail: "Sensitive actions — delete, share, approve — require confirmation, status feedback, and clear microcopy." },
+  { n: "04", icon: MessageSquareWarning, title: "Build trust through feedback", detail: "Sensitive actions such as  delete, share, approve, require confirmation, status feedback, and clear microcopy." },
   { n: "05", icon: Building2, title: "Design for enterprise scale", detail: "Components and workflows need to hold up across teams, departments, roles, and large document libraries." },
 ];
 
@@ -215,24 +215,24 @@ const WORKFLOWS: Workflow[] = [
   {
     tag: "Workflow 01",
     title: "Document upload & organization",
-    intro: "Uploading a document is simple. Preparing it for enterprise use is not — users need to define context, classification, metadata, access, and ownership before a file becomes a governed enterprise document.",
+    intro: "Uploading a document is simple. Preparing it for enterprise use is not. Users need to define context, classification, metadata, access, and ownership before a file becomes a governed enterprise document.",
     steps: ["File selection", "Metadata", "Permission management", "Completion"],
     impact: "A predictable, repeatable path from raw file to organized, access-controlled document.",
-    insight: "Breaking the process into progressive steps — instead of one dense form — kept the common case fast while still capturing what governance requires.",
+    insight: "Breaking the process into progressive steps; instead of one dense form - kept the common case fast while still capturing what governance requires.",
     icon: Upload,
   },
   {
     tag: "Workflow 02",
     title: "Document approval",
-    intro: "Before AsteraDocs, documents and approval discussions were often fragmented across email, chat, and support tickets, making it hard for teams to maintain visibility into approval progress and decisions. The approval experience brings that into one structured, traceable system — supporting employees submitting documents, managers reviewing them, and admins overseeing the workflow.",
+    intro: "Before AsteraDocs, documents and approval discussions were often fragmented across email, chat, and support tickets, making it hard for teams to maintain visibility into approval progress and decisions. The approval experience brings that into one structured, traceable system, supporting employees submitting documents, managers reviewing them, and admins overseeing the workflow.",
     steps: ["Request approval", "Pending", "Under review", "Approved / rejected", "Completed"],
     impact: "Reviewers and requesters both get a clear, current picture of where every document stands.",
-    insight: "Separating \u201cPending,\u201d \u201cCompleted,\u201d and \u201cMy requests\u201d into distinct views answers three different questions with one workflow — what needs my attention, what's waiting on someone else, and what's already resolved.",
+    insight: "Separating \u201cPending,\u201d \u201cCompleted,\u201d and \u201cMy requests\u201d into distinct views answers three different questions with one workflow; what needs my attention, what's waiting on someone else, and what's already resolved.",
     icon: ClipboardCheck,
     capabilities: ["Reviewing the document and its relevant history", "Adding comments or feedback", "Requesting changes", "Approving or rejecting"],
     usability: "Usability testing with target users indicated that the overall approval workflow was easy to understand and navigate. Feedback informed minor UI and interaction refinements without requiring fundamental changes to the workflow.",
     shots: [
-      { src: "/projects/asteradocs/approval-workflow1.png", alt: "AsteraDocs pending approvals view showing a document in a multi-stage review chain — Marketing Director, VP Marketing, and CMO — with stage progress indicated." },
+      { src: "/projects/asteradocs/approval-workflow1.png", alt: "AsteraDocs pending approvals view showing a document in a multi-stage review chain, Marketing Director, VP Marketing, and CMO. With stage progress indicated." },
       { src: "/projects/asteradocs/approval-workflow2.png", alt: "AsteraDocs completed approvals view showing an approved document and a rejected document with a recorded reason." },
       { src: "/projects/asteradocs/approval-workflow3.png", alt: "AsteraDocs my requests view within the approval workflow, shown in its empty state with an option to submit a new approval request." },
     ],
@@ -242,7 +242,7 @@ const WORKFLOWS: Workflow[] = [
     title: "Version control",
     intro: "Teams experienced confusion around duplicate document versions and needed clearer visibility into document history and the current version. The experience was designed to make the current document state clear while preserving access to version history, comparison, branching, and analytics.",
     steps: ["Version listing", "Version history", "Compare versions", "Version branching", "Version analytics"],
-    impact: "All five capabilities — listing, history, comparison, branching, and analytics — were designed and implemented.",
+    impact: "All five capabilities; listing, history, comparison, branching, and analytics were designed and implemented.",
     insight: "Each version surfaces its author, timestamp, file size, and change type at a glance, so identifying the right version doesn't require opening the file.",
     icon: History,
     shots: [
@@ -254,10 +254,10 @@ const WORKFLOWS: Workflow[] = [
   {
     tag: "Workflow 04",
     title: "Team & permission management",
-    intro: "Users belong to teams, departments, and roles. Permissions determine what each person can view, edit, upload, share, approve, or administer — and the design focus was making that logic transparent rather than inventing exact rules beyond what the product defines.",
+    intro: "Users belong to teams, departments, and roles. Permissions determine what each person can view, edit, upload, share, approve, or administrator and the design focus was making that logic transparent rather than inventing exact rules beyond what the product defines.",
     steps: ["Team members", "Departments", "Roles & permissions", "Team analytics"],
     impact: "Access decisions become visible and understandable, not a black box managed only by IT.",
-    insight: "Permission transparency mattered more than permission granularity — users needed to see who could do what, more than configure every edge case themselves.",
+    insight: "Permission transparency mattered more than permission granularity; users needed to see who could do what, more than configure every edge case themselves.",
     icon: Users,
     shots: [
       { src: "/projects/asteradocs/team-management1.png", alt: "AsteraDocs team members view showing member cards with role, department, storage, and last-active status." },
@@ -268,7 +268,7 @@ const WORKFLOWS: Workflow[] = [
   {
     tag: "Workflow 05",
     title: "Admin controls",
-    intro: "Administrators need system-level control — roles & permissions, activity logs, storage management — without that complexity leaking into the everyday experience of operational users.",
+    intro: "Administrators need system-level control, roles & permissions, activity logs, storage management - without that complexity leaking into the everyday experience of operational users.",
     steps: ["Users", "Roles & permissions", "Activity logs", "Storage management"],
     impact: "Two distinct experiences from one system: task-oriented for regular users, system-level for admins.",
     insight: "Role-aware interfaces meant the admin panel could hold real complexity without ever showing up for someone who just needs to upload a file.",
@@ -282,10 +282,10 @@ const WORKFLOWS: Workflow[] = [
   {
     tag: "Workflow 06",
     title: "Third-party integrations",
-    intro: "Enterprise document systems rarely operate in isolation. The integrations experience supports extensibility — connecting external tools and webhooks — while staying understandable to configure, including handling connection failures gracefully.",
+    intro: "Enterprise document systems rarely operate in isolation. The integrations experience supports extensibility, connecting external tools and webhooks, while staying understandable to configure, including handling connection failures gracefully.",
     steps: ["Browse integrations", "Available integrations", "Connected", "API & webhooks", "Manage webhooks"],
     impact: "A clear separation between discovering, connecting, and managing integrations and their webhooks.",
-    insight: "Treating \u201cavailable\u201d and \u201cconnected\u201d as distinct states — rather than one long list — made an inherently technical area easier to scan. The connected view also surfaces failure states, like an expired API key, rather than hiding them.",
+    insight: "Treating \u201cavailable\u201d and \u201cconnected\u201d as distinct states rather than one long list made an inherently technical area easier to scan. The connected view also surfaces failure states, like an expired API key, rather than hiding them.",
     icon: Webhook,
     shots: [
       { src: "/projects/asteradocs/integrations1.png", alt: "AsteraDocs connected integrations view showing Google Drive and Slack connected successfully, and Zapier showing a connection error with an expired API key." },
@@ -329,13 +329,13 @@ const DECISIONS = [
 ];
 
 /* ------------------------------------------------------------------ */
-/* Trade-offs — framed as design considerations, not production claims */
+/* Trade-offs - framed as design considerations, not production claims */
 /* ------------------------------------------------------------------ */
 
 const TRADEOFFS = [
-  { a: "Control", b: "Speed", detail: "More permission steps improve governance but increase workflow friction — a tension worth designing around rather than resolving once." },
+  { a: "Control", b: "Speed", detail: "More permission steps improve governance but increase workflow friction, a tension worth designing around rather than resolving once." },
   { a: "Flexibility", b: "Consistency", detail: "Custom folder structures give teams freedom but can reduce organization-wide consistency over time." },
-  { a: "Visibility", b: "Information density", detail: "Enterprise dashboards need to be comprehensive without becoming overwhelming — a balance explored throughout the admin and version-control views." },
+  { a: "Visibility", b: "Information density", detail: "Enterprise dashboards need to be comprehensive without becoming overwhelming a balance explored throughout the admin and version-control views." },
   { a: "Automation", b: "User confidence", detail: "Automated workflows save time, but users still need visibility into document state to trust the system." },
 ];
 
@@ -361,19 +361,19 @@ const SYSTEM_LAYERS = [
   {
     n: "2",
     title: "Role & permission system",
-    detail: "Permission logic is expressed consistently across upload, sharing, and admin surfaces — the same visual pattern for \u201cwho can do what,\u201d wherever it shows up.",
+    detail: "Permission logic is expressed consistently across upload, sharing, and admin surfaces. The same visual pattern for \u201cwho can do what,\u201d wherever it shows up.",
     tags: ["Role system", "Permission system"],
   },
   {
     n: "3",
     title: "Feedback & confirmation patterns",
-    detail: "Sensitive actions — delete, share, approve — trigger the same confirmation and toast patterns, building predictable trust across the whole system.",
+    detail: "Sensitive actions: delete, share, approve - trigger the same confirmation and toast patterns, building predictable trust across the whole system.",
     tags: ["Activity feedback", "Confirmation patterns"],
   },
 ];
 
 /* ------------------------------------------------------------------ */
-/* Outcomes & learnings — qualitative only, per the original reference */
+/* Outcomes & learnings - qualitative only, per the original reference */
 /* ------------------------------------------------------------------ */
 
 const OUTCOMES = [
@@ -384,9 +384,9 @@ const OUTCOMES = [
 ];
 
 const LEARNINGS = [
-  { title: "Enterprise UX requires deep empathy", detail: "Understanding multiple user roles — operational, managerial, governance — was essential to building relevant, non-biased workflows for each." },
+  { title: "Enterprise UX requires deep empathy", detail: "Understanding multiple user roles, operational, managerial, governance - was essential to building relevant, non-biased workflows for each." },
   { title: "Clear feedback prevents user anxiety", detail: "Sensitive actions like deleting, sharing, approving, or managing versions need clear system feedback. Microcopy, toasts, confirmation modals, version labels, and status indicators all build trust." },
-  { title: "Modular design pays off", detail: "Reusable components — file cards, modals, tag chips, status badges — improved consistency and made developer handoff smoother, while system thinking and modular workflows helped the product scale across different use cases." },
+  { title: "Modular design pays off", detail: "Reusable components, file cards, modals, tag chips, status badges. Improved consistency and made developer handoff smoother, while system thinking and modular workflows helped the product scale across different use cases." },
 ];
 
 const TOC: TocItem[] = [
@@ -490,7 +490,7 @@ function QuickOverview() {
         <SectionHeading eyebrow="Project overview" title="Not a storage problem. A coordination problem." maxWidth={620} />
         <Reveal delay={100} style={{ marginTop: 24, display: "flex", flexDirection: "column", gap: 16, maxWidth: 700 }}>
           <p style={{ fontFamily: fontBody, fontSize: 16, lineHeight: 1.75, color: COLORS.inkSoft, margin: 0 }}>
-            Enterprise teams often manage critical documents across fragmented systems — shared drives,
+            Enterprise teams often manage critical documents across fragmented systems, shared drives,
             email threads, messaging platforms, and outdated document tools. That fragmentation creates
             duplicate versions, unclear ownership, manual approval processes, poor permission visibility,
             and weak auditability.
@@ -498,7 +498,7 @@ function QuickOverview() {
           <p style={{ fontFamily: fontBody, fontSize: 16, lineHeight: 1.75, color: COLORS.inkSoft, margin: 0 }}>
             Enterprise document management isn&apos;t simply a file-storage problem. It&apos;s a coordination
             problem involving people, permissions, versions, approvals, compliance, ownership, and
-            auditability — all at once.
+            auditability all at once.
           </p>
           <Callout kind="insight" title="Framing question">
             How might we make complex document workflows feel simple, without compromising the enterprise
@@ -575,7 +575,7 @@ function RoleSection() {
     <section style={{ padding: "72px 0" }}>
       <Container>
         <div style={{ display: "grid", gridTemplateColumns: "0.85fr 1.15fr", gap: 56 }} className="role-grid">
-          <SectionHeading eyebrow="My role & contribution" title="What I directly designed" subtitle="As the sole UI/UX designer on this project, I owned the process end to end — from research framing through interactive prototype." maxWidth={420} />
+          <SectionHeading eyebrow="My role & contribution" title="What I directly designed" subtitle="As the sole Product designer on this project, I owned the process end to end from research framing through interactive prototype." maxWidth={420} />
           <div style={{ display: "flex", flexDirection: "column" }}>
             {ROLE_ITEMS.map((r, i) => (
               <Reveal delay={i * 50} key={r.title} style={{ padding: "16px 0", borderTop: i === 0 ? "none" : `1px solid ${COLORS.border}` }}>
@@ -676,7 +676,7 @@ function PrinciplesSection() {
 }
 
 /* ==================================================================== */
-/* Information architecture — grouped modules, not a giant diagram      */
+/* Information architecture - grouped modules, not a giant diagram      */
 /* ==================================================================== */
 
 function ArchitectureSection() {
@@ -720,7 +720,7 @@ function CoreArchitectureSection() {
   return (
     <section style={{ padding: "72px 0" }}>
       <Container>
-        <SectionHeading eyebrow="Core product architecture" title="Six connected systems, sharing one set of entities" subtitle="AsteraDocs isn't one flow — it's several connected systems built on a shared data model. That's what makes the product scale instead of sprawl." maxWidth={680} />
+        <SectionHeading eyebrow="Core product architecture" title="Six connected systems, sharing one set of entities" subtitle="AsteraDocs isn't one flow; it's several connected systems built on a shared data model. That's what makes the product scale instead of sprawl." maxWidth={680} />
         <div style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: 12, marginTop: 40 }} className="systems-grid">
           {SYSTEMS.map((s, i) => (
             <Reveal delay={i * 40} key={s.title} style={{ background: COLORS.white, border: `1px solid ${COLORS.border}`, borderRadius: 10, padding: "16px 12px", textAlign: "center" }}>
@@ -749,10 +749,10 @@ function CoreArchitectureSection() {
 }
 
 /* ==================================================================== */
-/* Workflows — alternating layout                                       */
+/* Workflows - alternating layout                                       */
 /* ==================================================================== */
 
-/* Real product screenshot, presented cleanly — no redraws, no device chrome */
+/* Real product screenshot, presented cleanly - no redraws, no device chrome */
 function ProductShot({ src, alt, priority = false }: { src: string; alt: string; priority?: boolean }) {
   return (
     <div
@@ -903,7 +903,7 @@ function ProgressionSection() {
   return (
     <section style={{ padding: "72px 0" }}>
       <Container>
-        <SectionHeading eyebrow="From wireframes to final UI" title="How structure became product" subtitle="Two representative examples — not every screen, just the workflows where the shift from sketch to system mattered most." maxWidth={680} />
+        <SectionHeading eyebrow="From wireframes to final UI" title="How structure became product" subtitle="Two representative examples not every screen, just the workflows where the shift from sketch to system mattered most." maxWidth={680} />
         <div style={{ display: "flex", flexDirection: "column", gap: 20, marginTop: 40 }}>
           {PROGRESSIONS.map((p, i) => (
             <Reveal delay={i * 100} key={p.title} style={{ border: `1px solid ${COLORS.border}`, borderRadius: 14, padding: "24px 26px", background: COLORS.white }}>
@@ -996,18 +996,18 @@ function DecisionsSection() {
 }
 
 /* ==================================================================== */
-/* Design system — the one place the product's own blue shows up       */
+/* Design system - the one place the product's own blue shows up       */
 /* ==================================================================== */
 
 function DesignSystemSection() {
   return (
     <section id="design-system" style={{ padding: "72px 0", scrollMarginTop: 96 }}>
       <Container>
-        <SectionHeading eyebrow="Design system" title="Modular components, built for consistency and handoff" subtitle="AsteraDocs uses its own product identity — shown here as reference, not as this page's palette." maxWidth={680} />
+        <SectionHeading eyebrow="Design system" title="Modular components, built for consistency and handoff" subtitle="AsteraDocs uses its own product identity shown here as reference, not as this page's palette." maxWidth={680} />
 
         <Reveal delay={100} style={{ marginTop: 40, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }} className="ds-grid">
           <div>
-            <div style={{ fontFamily: fontMono, fontSize: 11.5, textTransform: "uppercase", letterSpacing: "0.05em", color: COLORS.muted, marginBottom: 14 }}>Typography — Urbanist</div>
+            <div style={{ fontFamily: fontMono, fontSize: 11.5, textTransform: "uppercase", letterSpacing: "0.05em", color: COLORS.muted, marginBottom: 14 }}>Typography - Urbanist</div>
             <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 18 }}>
               {TYPE_SCALE.map((size) => (
                 <div key={size} style={{ display: "flex", alignItems: "baseline", gap: 12 }}>
@@ -1070,7 +1070,7 @@ function SystemLayerSection() {
   return (
     <section style={{ padding: "72px 0", background: COLORS.surface }}>
       <Container>
-        <SectionHeading eyebrow="System layer" title="Behavioral patterns, not just visual ones" subtitle="The design system isn't only components — it establishes predictable behavior across the whole product." maxWidth={680} />
+        <SectionHeading eyebrow="System layer" title="Behavioral patterns, not just visual ones" subtitle="The design system isn't only components, it establishes predictable behavior across the whole product." maxWidth={680} />
         <div style={{ display: "flex", flexDirection: "column", marginTop: 40 }}>
           {SYSTEM_LAYERS.map((l, i) => (
             <Reveal delay={i * 80} key={l.n} style={{ padding: "24px 0", borderTop: i === 0 ? "none" : `1px solid ${COLORS.border}` }}>
@@ -1131,7 +1131,7 @@ function LearningsSection() {
         </div>
         <Reveal delay={200} style={{ borderTop: "1px solid #2E5A4E", paddingTop: 32 }}>
           <p style={{ fontFamily: fontDisplay, fontWeight: 500, fontSize: "clamp(18px, 2vw, 22px)", lineHeight: 1.5, color: COLORS.bg, margin: 0, letterSpacing: "-0.01em", maxWidth: 720 }}>
-            AsteraDocs reinforced that enterprise UX isn&apos;t about removing complexity entirely — it&apos;s
+            AsteraDocs reinforced that enterprise UX isn&apos;t about removing complexity entirely, it&apos;s
             about structuring complexity so users can act with confidence.
           </p>
         </Reveal>

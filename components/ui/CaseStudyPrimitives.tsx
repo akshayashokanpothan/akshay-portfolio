@@ -5,7 +5,7 @@ import { ArrowUp } from "lucide-react";
 import { COLORS, fontBody, fontMono } from "@/lib/tokens";
 import { useReveal } from "./Reveal";
 
-/* Browser chrome wrapper — gives coded UI mockups a "real product" presentation */
+/* Browser chrome wrapper - gives coded UI mockups a "real product" presentation */
 export function BrowserFrame({
   children,
   url = "app.factweavers.com",
@@ -66,7 +66,7 @@ export function BrowserFrame({
   );
 }
 
-/* Micro-storytelling callout — insight / trade-off / decision / change */
+/* Micro-storytelling callout - insight / trade-off / decision / change */
 const CALLOUT_KINDS = {
   insight: { label: "Key insight", color: COLORS.accent, bg: COLORS.accentSoft },
   tradeoff: { label: "Trade-off", color: "#8A5A1E", bg: "#F7EEDF" },
@@ -104,7 +104,7 @@ export function Callout({
   );
 }
 
-/* Premium metric pop-in — used where values aren't clean integers (ranges, units) */
+/* Premium metric pop-in - used where values aren't clean integers (ranges, units) */
 export function StatPop({
   value,
   label,

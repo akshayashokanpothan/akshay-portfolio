@@ -2,7 +2,7 @@ import React from "react";
 import { COLORS } from "@/lib/tokens";
 
 /**
- * SBI YONO — purple/magenta mobile-login abstraction.
+ * SBI YONO - purple/magenta mobile-login abstraction.
  * Deliberately breaks from the portfolio's ink/teal accent because it represents
  * this specific external case study's own brand direction, contained entirely
  * within this one card (matches how AsteraDocs' own product blue was used
@@ -36,7 +36,7 @@ export function SbiYonoThumbnail() {
   );
 }
 
-/** Quickbot — conversational commerce: chat bubble with typing dots + product recommendation cards. */
+/** Quickbot - conversational commerce: chat bubble with typing dots + product recommendation cards. */
 export function QuickbotThumbnail() {
   return (
     <svg viewBox="0 0 400 220" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" role="img" aria-hidden="true">
@@ -65,7 +65,7 @@ export function QuickbotThumbnail() {
   );
 }
 
-/** Behance — editorial grid of mockup frames, no logo. */
+/** Behance - editorial grid of mockup frames, no logo. */
 export function BehanceThumbnail() {
   const frames = [
     { x: 24, y: 30, w: 100, h: 72, r: -4 },

@@ -2,7 +2,7 @@ import React from "react";
 import { COLORS } from "@/lib/tokens";
 
 /**
- * Minimal geometric "A" monogram — a rounded ink square with a white
+ * Minimal geometric "A" monogram - a rounded ink square with a white
  * diagonal peak and a single teal crossbar. Built as plain SVG so it
  * stays crisp at navbar sizes without any raster assets or gradients.
  */

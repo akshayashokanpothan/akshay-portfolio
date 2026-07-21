@@ -20,7 +20,7 @@ const METRICS = [
 const PROCESS_STEPS = [
   { step: "Research", detail: "Talk to users, audit the system, find the real constraint." },
   { step: "Define", detail: "Frame the problem in language the business agrees with." },
-  { step: "Ideate", detail: "Explore structure before surface — flows before pixels." },
+  { step: "Ideate", detail: "Explore structure before surface flows before pixels." },
   { step: "Prototype", detail: "Build it interactive enough to feel true to test." },
   { step: "Validate", detail: "Test with real users and real edge cases." },
   { step: "Ship", detail: "Hand off with rationale, not just redlines." },
@@ -32,7 +32,7 @@ const EXPERIENCE = [
     company: "DBiz AI",
     role: "Product Designer 2",
     location: "Kochi, Kerala",
-    duration: "Aug 25 — Mar 26",
+    duration: "Aug 25 - Mar 26",
     impact:
       "Own end-to-end design for AI-powered analytics and data engineering products, including FactWeavers AI, AsteraDocs, and Aptive.",
   },
@@ -40,7 +40,7 @@ const EXPERIENCE = [
     company: "Innovatily Inc.",
     role: "Product Designer",
     location: "Bangalore, Karnataka",
-    duration: "Dec 24 — May 25",
+    duration: "Dec 24 - May 25",
     impact:
       "Led UX for enterprise SaaS tools, translating complex backend logic into workflows non-technical users could operate confidently.",
   },
@@ -48,7 +48,7 @@ const EXPERIENCE = [
     company: "Imiot Tech.",
     role: "Lead Product Designer",
     location: "Kannur, Kerala",
-    duration: "Jul 22 — Dec 24",
+    duration: "Jul 22 - Dec 24",
     impact:
       "Led product design across the team's SaaS products, setting design direction and mentoring on design system and interaction decisions.",
   },
@@ -56,7 +56,7 @@ const EXPERIENCE = [
     company: "Imiot Tech.",
     role: "Founding Product Designer",
     location: "Kannur, Kerala",
-    duration: "Jun 20 — Jul 22",
+    duration: "Jun 20 - Jul 22",
     impact: "Established the company's earliest design practice, building foundational design systems and shipping early-stage product interfaces across web and mobile.",
   },
 ];
@@ -150,8 +150,7 @@ function Hero() {
             </h1>
             <p style={{ fontFamily: fontBody, fontSize: 18, lineHeight: 1.6, color: COLORS.muted, maxWidth: 520, marginBottom: 32 }}>
               Product Designer with 5+ years shaping AI-powered analytics platforms, data
-              engineering tools, and enterprise SaaS — from research to shipped systems, at
-              Dbiz AI Solutions.
+              engineering tools, and enterprise SaaS from research to shipped systems.
             </p>
             <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
               <Button variant="accent" href="#work">View case studies</Button>
@@ -209,7 +208,7 @@ function FeaturedWork() {
           <SectionHeading
             eyebrow="Selected works"
             title="Systems built for people who make decisions under pressure"
-            subtitle="My two primary, in-depth case studies — taken from research through shipped design."
+            subtitle="My two primary, in-depth case studies: taken from research through shipped design."
           />
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }} className="work-grid">
@@ -250,12 +249,8 @@ function About() {
           <SectionHeading eyebrow="About" title="Product thinking, applied to systems most people never see" />
           <Reveal delay={100}>
             <p style={{ fontFamily: fontBody, fontSize: 17, lineHeight: 1.75, color: COLORS.inkSoft, marginBottom: 28 }}>
-              I&apos;m a Product Designer based in Kerala, India, working on AI-powered analytics
-              and enterprise SaaS at Dbiz AI Solutions. My work sits where complex backend
-              logic meets people who need to make fast, confident decisions — data teams,
-              HR managers, operations leads. I care about the parts of a product that don&apos;t
-              photograph well: state design, edge cases, information hierarchy, the moment
-              a system tells the truth about what just happened.
+              I&apos;m a Product Designer based in Kerala, India, Designing on AI-powered enterprise products
+              and complex SaaS experiences. My work focuses on transforming sophisticated backend systems into intuitive interfaces that help people make faster and more confident decisions. I specialize in end-to-end product design, from research and ideation to prototyping and delivery, with a strong emphasis on design systems and user-centered solutions.
             </p>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 14 }}>
               {["Product thinking", "Systems thinking", "Enterprise UX", "AI-powered products"].map((t) => (
@@ -281,7 +276,7 @@ function ProcessTimeline() {
   return (
     <section id="process" style={{ padding: "96px 0", scrollMarginTop: 80 }}>
       <Container>
-        <SectionHeading eyebrow="How I work" title="A process built around evidence, not assumptions" subtitle="Seven stages I return to on every project — sometimes fast, sometimes slow, always in this order." />
+        <SectionHeading eyebrow="How I work" title="A process built around evidence, not assumptions" subtitle="Seven stages I return to on every project: sometimes fast, sometimes slow, always in this order." />
         <Reveal delay={80} style={{ marginTop: 48 }}>
           <div style={{ display: "flex", gap: 4, overflowX: "auto", paddingBottom: 8 }} className="process-rail">
             {PROCESS_STEPS.map((p, i) => (
