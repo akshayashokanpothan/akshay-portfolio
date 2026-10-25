@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { label: "Process", href: "/#process" },
   { label: "About", href: "/#about" },
   { label: "Contact", href: "/#contact" },
+  { label: "Connection Jobs", href: "/careers" },
 ];
 
 export function Footer() {
