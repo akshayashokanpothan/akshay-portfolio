@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { Mail, ExternalLink, FileText, Layers, Boxes, Sparkles, Users } from "lucide-react";
+import Image from "next/image";
+import { Mail, ExternalLink, FileText, Layers, Boxes, Sparkles, Users, Activity, Code2 } from "lucide-react";
 import { COLORS, fontDisplay, fontBody, fontMono } from "@/lib/tokens";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow, SectionHeading } from "@/components/ui/SectionHeading";
@@ -28,6 +29,14 @@ const PROCESS_STEPS = [
 ];
 
 const EXPERIENCE = [
+  {
+    company: "IDEO Graphics",
+    role: "Design Lead; Experience Design",
+    location: "Kochi, Kerala",
+    duration: "Oct 26 – Present",
+    impact:
+      "Leading the design team towards a more mature UX process, with a stronger focus on research, experience strategy, and shipping high-quality products. Building and evolving design systems, hiring and developing design talent, and defining how product experiences should be structured, designed, and presented.",
+  },
   {
     company: "DBiz AI",
     role: "Product Designer 2",
@@ -271,6 +280,191 @@ function About() {
   );
 }
 
+const AI_PROJECTS = [
+  {
+    id: "fitness-ai",
+    status: "Live",
+    aiAssisted: true,
+    title: "Fitness AI Assistant",
+    description: "An AI-powered fitness companion that helps beginners with personalized workout planning, meal analysis, conversational coaching, and progress tracking. I designed the end-to-end product experience and built the MVP using AI-assisted development.",
+    contributions: [
+      "Product Strategy",
+      "UX Research",
+      "UX/UI Design",
+      "Prompt Engineering",
+      "AI-assisted Development",
+      "Deployment"
+    ],
+    highlights: [
+      "AI Chat Coach",
+      "Meal Image Analysis",
+      "Personalized Workout Generator",
+      "Progress Tracking",
+      "Conversational UX",
+      "Mobile-first"
+    ],
+    metrics: [
+      { label: "18+", subtitle: "Exercises" },
+      { label: "50+", subtitle: "Indian Meals" },
+      { label: "Mobile", subtitle: "First" },
+      { label: "AI", subtitle: "Powered" }
+    ],
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "AI APIs", "Vercel"],
+    links: {
+      live: "#",
+      github: "#",
+      caseStudy: "#"
+    },
+    heroImage: null,
+  }
+];
+
+function AIProductCard({ project, index }: { project: typeof AI_PROJECTS[0], index: number }) {
+  const [hover, setHover] = useState(false);
+  
+  return (
+    <Reveal delay={index * 100}>
+      <div 
+        style={{ 
+          display: "grid", 
+          gridTemplateColumns: "1fr 1fr", 
+          gap: 48, 
+          background: COLORS.white, 
+          border: `1px solid ${COLORS.border}`, 
+          borderRadius: 20, 
+          padding: 40,
+          transition: "transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease",
+          transform: hover ? "translateY(-4px)" : "none",
+          boxShadow: hover ? "0 24px 48px -12px rgba(20,24,28,0.12)" : "none",
+          borderColor: hover ? COLORS.borderStrong : COLORS.border
+        }}
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+        className="ai-card"
+      >
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 24 }}>
+             <span style={{ fontFamily: fontMono, fontSize: 12, color: COLORS.accent, textTransform: "uppercase", letterSpacing: "0.06em" }}>AI Product</span>
+             <div style={{ display: "flex", gap: 8 }}>
+                {project.aiAssisted && (
+                  <span style={{ fontFamily: fontMono, fontSize: 10, textTransform: "uppercase", letterSpacing: "0.04em", color: COLORS.inkSoft, background: COLORS.surface, border: `1px solid ${COLORS.border}`, borderRadius: 5, padding: "4px 8px" }}>
+                    AI Assisted
+                  </span>
+                )}
+                <span style={{ fontFamily: fontMono, fontSize: 10, textTransform: "uppercase", letterSpacing: "0.04em", color: COLORS.accent, background: COLORS.accentSoft, borderRadius: 5, padding: "4px 8px" }}>
+                  {project.status}
+                </span>
+             </div>
+          </div>
+          
+          <h3 style={{ fontFamily: fontDisplay, fontWeight: 500, fontSize: 32, color: COLORS.ink, margin: "0 0 16px", lineHeight: 1.15 }}>{project.title}</h3>
+          
+          <p style={{ fontFamily: fontBody, fontSize: 15.5, lineHeight: 1.65, color: COLORS.inkSoft, margin: "0 0 32px" }}>
+            {project.description}
+          </p>
+          
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12, marginBottom: 36, paddingBottom: 32, borderBottom: `1px solid ${COLORS.border}` }} className="ai-metrics">
+            {project.metrics.map((m, i) => (
+               <div key={i}>
+                 <div style={{ fontFamily: fontMono, fontSize: 20, color: COLORS.ink, fontWeight: 500, marginBottom: 4 }}>{m.label}</div>
+                 <div style={{ fontFamily: fontBody, fontSize: 12.5, color: COLORS.muted }}>{m.subtitle}</div>
+               </div>
+            ))}
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, marginBottom: 40 }} className="ai-details">
+            <div>
+              <h4 style={{ fontFamily: fontMono, fontSize: 11, color: COLORS.muted, marginBottom: 14, textTransform: "uppercase", letterSpacing: "0.06em" }}>My Contribution</h4>
+              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                {project.contributions.map(c => (
+                  <div key={c} style={{ fontFamily: fontBody, fontSize: 14, color: COLORS.inkSoft }}>
+                    {c}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h4 style={{ fontFamily: fontMono, fontSize: 11, color: COLORS.muted, marginBottom: 14, textTransform: "uppercase", letterSpacing: "0.06em" }}>Highlights</h4>
+              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                {project.highlights.map(h => (
+                  <div key={h} style={{ display: "flex", alignItems: "center", gap: 8, fontFamily: fontBody, fontSize: 14, color: COLORS.inkSoft }}>
+                    <span style={{ width: 4, height: 4, borderRadius: 2, background: COLORS.accent }} />
+                    {h}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 40 }}>
+            {project.techStack.map(tech => (
+              <span key={tech} style={{ fontFamily: fontMono, fontSize: 12, color: COLORS.inkSoft, background: COLORS.surface, border: `1px solid ${COLORS.border}`, borderRadius: 20, padding: "6px 14px" }}>
+                {tech}
+              </span>
+            ))}
+          </div>
+
+          <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: "auto" }}>
+            <Button variant="accent" href={project.links.live} icon={ExternalLink}>Explore Product</Button>
+            <Button variant="secondary" href={project.links.github} icon={Code2}>Source Code</Button>
+            <Button variant="secondary" href={project.links.caseStudy} icon={FileText}>Read Case Study</Button>
+          </div>
+        </div>
+        
+        <div style={{ 
+          background: COLORS.surface, 
+          borderRadius: 16, 
+          border: `1px solid ${COLORS.border}`, 
+          overflow: "hidden", 
+          position: "relative", 
+          minHeight: 480, 
+          display: "flex", 
+          alignItems: "center", 
+          justifyContent: "center",
+          backgroundImage: "linear-gradient(to bottom right, #f8f8f6, #e9e9e4)"
+        }}>
+           {project.heroImage ? (
+             <Image src={project.heroImage} alt={project.title} fill style={{ objectFit: "cover" }} />
+           ) : (
+             <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 16, color: COLORS.muted, opacity: 0.5 }}>
+                <Activity size={42} strokeWidth={1.5} />
+                <span style={{ fontFamily: fontMono, fontSize: 13, letterSpacing: "0.02em" }}>Screenshot Showcase Area</span>
+             </div>
+           )}
+        </div>
+      </div>
+    </Reveal>
+  );
+}
+
+function AIProducts() {
+  return (
+    <section id="ai-products" style={{ padding: "96px 0", scrollMarginTop: 80 }}>
+      <Container>
+        <SectionHeading 
+          eyebrow="AI Products" 
+          title="Products designed and shipped using AI-assisted development." 
+        />
+        <div style={{ marginTop: 48, display: "flex", flexDirection: "column", gap: 64 }}>
+          {AI_PROJECTS.map((project, index) => (
+            <AIProductCard key={project.id} project={project} index={index} />
+          ))}
+        </div>
+      </Container>
+      <style>{`
+        @media (max-width: 1024px) {
+          .ai-card { grid-template-columns: 1fr !important; gap: 40px !important; }
+        }
+        @media (max-width: 600px) {
+          .ai-metrics { grid-template-columns: 1fr 1fr !important; gap: 20px !important; border-bottom: none !important; padding-bottom: 0 !important; }
+          .ai-details { grid-template-columns: 1fr !important; gap: 32px !important; }
+        }
+      `}</style>
+    </section>
+  );
+}
+
 function ProcessTimeline() {
   const [active, setActive] = useState(0);
   return (
@@ -403,6 +597,7 @@ export function HomePage() {
       <Hero />
       <MetricStrip />
       <FeaturedWork />
+      <AIProducts />
       <About />
       <ProcessTimeline />
       <ExperienceTimeline />
