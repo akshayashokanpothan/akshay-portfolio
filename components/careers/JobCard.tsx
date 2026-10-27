@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import { ArrowUpRight, MessageSquare, Clock, MapPin, Briefcase, Layers, Users, Mail } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, ArrowUpRight, Clock, MapPin, Briefcase, Layers, Users, Mail } from "lucide-react";
 import { Job } from "@/lib/types/jobs";
 import { getJobExpiryInfo, isJobApplyable } from "@/lib/jobs/expiry";
-import { formatExperience, getClarificationUrl } from "@/lib/data/jobs";
+import { formatExperience } from "@/lib/data/jobs";
 import { COLORS, fontBody, fontDisplay, fontMono } from "@/lib/tokens";
 import { Button } from "@/components/ui/Button";
 
@@ -15,12 +16,13 @@ interface JobCardProps {
 
 export function JobCard({ job, now }: JobCardProps) {
   const [hover, setHover] = useState(false);
+  const [titleHover, setTitleHover] = useState(false);
   const [closedError, setClosedError] = useState<string | null>(null);
 
   const expiry = getJobExpiryInfo(job, now);
   const experienceText = formatExperience(job);
-  const clarificationUrl = getClarificationUrl(job);
   const canApply = isJobApplyable(job, now) && !closedError;
+  const detailUrl = `/careers/${job.slug}`;
 
   const handleApplyClick = (e?: React.MouseEvent) => {
     // Re-validate deadline at time of action
@@ -121,7 +123,18 @@ export function JobCard({ job, now }: JobCardProps) {
                 lineHeight: 1.25,
               }}
             >
-              {job.title}
+              <Link
+                href={detailUrl}
+                style={{
+                  color: titleHover ? COLORS.accent : COLORS.ink,
+                  textDecoration: "none",
+                  transition: "color 0.15s ease",
+                }}
+                onMouseEnter={() => setTitleHover(true)}
+                onMouseLeave={() => setTitleHover(false)}
+              >
+                {job.title}
+              </Link>
             </h3>
 
             {/* Visual distinction for role specializations */}
@@ -196,7 +209,7 @@ export function JobCard({ job, now }: JobCardProps) {
         </div>
       </div>
 
-      {/* Metadata strip: clean rendering without fabricated unspecified fields */}
+      {/* Metadata strip */}
       <div
         style={{
           display: "flex",
@@ -206,7 +219,7 @@ export function JobCard({ job, now }: JobCardProps) {
           fontFamily: fontBody,
           fontSize: 14,
           color: COLORS.muted,
-          marginBottom: job.description ? 14 : 24,
+          marginBottom: 14,
         }}
       >
         {metaItems.map((item, idx) => (
@@ -217,7 +230,8 @@ export function JobCard({ job, now }: JobCardProps) {
         ))}
       </div>
 
-      {job.description && (
+      {/* Summary / description excerpt */}
+      {(job.summary || job.description) && (
         <p
           style={{
             fontFamily: fontBody,
@@ -225,10 +239,10 @@ export function JobCard({ job, now }: JobCardProps) {
             lineHeight: 1.6,
             color: COLORS.inkSoft,
             margin: "0 0 24px",
-            maxWidth: 720,
+            maxWidth: 740,
           }}
         >
-          {job.description}
+          {job.summary || job.description}
         </p>
       )}
 
@@ -246,11 +260,15 @@ export function JobCard({ job, now }: JobCardProps) {
         </p>
       )}
 
-      {/* Actions */}
+      {/* Actions: Detail-first exploration with direct apply option */}
       <div style={{ display: "flex", gap: 12, flexWrap: "wrap", alignItems: "center" }}>
+        <Button variant="primary" href={detailUrl} icon={ArrowRight}>
+          Explore Role
+        </Button>
+
         {canApply ? (
           <Button
-            variant="primary"
+            variant="secondary"
             href={job.applicationUrl || "#"}
             icon={isMailtoApplication ? Mail : ArrowUpRight}
             onClick={handleApplyClick}
@@ -258,15 +276,8 @@ export function JobCard({ job, now }: JobCardProps) {
             Apply
           </Button>
         ) : (
-          <Button variant="primary" disabled icon={ArrowUpRight}>
-            {expiry.isOpen && !job.applicationUrl ? "Application Unavailable" : "Applications Closed"}
-          </Button>
-        )}
-
-        {/* Clarify Doubts rendered ONLY when a valid clarification destination exists */}
-        {clarificationUrl && (
-          <Button variant="secondary" href={clarificationUrl} icon={MessageSquare}>
-            Clarify Doubts
+          <Button variant="secondary" disabled icon={ArrowUpRight}>
+            Applications Closed
           </Button>
         )}
       </div>
