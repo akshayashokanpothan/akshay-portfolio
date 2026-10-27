@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { CareersPage } from "@/components/careers/CareersPage";
+import { getPublicJobs } from "@/lib/supabase/jobs";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Connection Jobs | Careers",
@@ -17,6 +20,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page() {
-  return <CareersPage />;
+export default async function Page() {
+  const jobs = await getPublicJobs();
+  return <CareersPage initialJobs={jobs} />;
 }

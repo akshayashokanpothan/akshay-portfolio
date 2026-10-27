@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getJobBySlug, getAllJobSlugs } from "@/lib/data/jobs";
+import { getAllJobSlugs } from "@/lib/data/jobs";
+import { getPublicJobBySlug } from "@/lib/supabase/jobs";
 import { JobDetailPage } from "@/components/careers/JobDetailPage";
+
+export const dynamic = "force-dynamic";
 
 interface PageProps {
   params: Promise<{
@@ -17,9 +20,9 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const job = getJobBySlug(slug);
+  const job = await getPublicJobBySlug(slug);
 
-  if (!job) {
+  if (!job || job.status === "Draft") {
     return {
       title: "Position Not Found | Careers",
       description: "The requested job opening could not be found.",
@@ -50,11 +53,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function Page({ params }: PageProps) {
   const { slug } = await params;
-  const job = getJobBySlug(slug);
+  const job = await getPublicJobBySlug(slug);
 
-  if (!job) {
+  if (!job || job.status === "Draft") {
     notFound();
   }
 
-  return <JobDetailPage slug={slug} />;
+  return <JobDetailPage job={job} />;
 }

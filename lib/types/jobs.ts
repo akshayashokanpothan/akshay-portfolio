@@ -1,6 +1,6 @@
 export type WorkMode = "On-site" | "Hybrid" | "Remote";
 export type EmploymentType = "Full-time" | "Internship" | "Contract";
-export type JobStatus = "Draft" | "Open" | "Closed";
+export type JobStatus = "Draft" | "Open" | "Published" | "Closed";
 
 export interface ResponsibilityCategory {
   category: string;

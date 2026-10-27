@@ -10,18 +10,19 @@
     "test": "node --experimental-strip-types scripts/test-jobs.mjs"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.118.0",
+    "lucide-react": "^1.25.0",
     "next": "15.5.20",
     "react": "19.0.0",
-    "react-dom": "19.0.0",
-    "lucide-react": "^1.25.0"
+    "react-dom": "19.0.0"
   },
   "devDependencies": {
-    "typescript": "^5.6.3",
+    "@eslint/eslintrc": "^3.2.0",
+    "@types/node": "^22.10.2",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
-    "@types/node": "^22.10.2",
     "eslint": "^9.17.0",
     "eslint-config-next": "15.5.20",
-    "@eslint/eslintrc": "^3.2.0"
+    "typescript": "^5.6.3"
   }
 }

@@ -205,4 +205,56 @@ assert.strictEqual(getJobBySlug("creative-motion-graphics-designer")?.id, jobD.i
 assert.strictEqual(getJobBySlug("non-existent-slug"), undefined);
 console.log("✓ Test 15 Passed: getJobBySlug and getAllJobSlugs helpers verified.");
 
-console.log("\nALL 15 TESTS PASSED SUCCESSFULLY!");
+// 16. Supabase DB Mapper Tests
+import { mapJobToRow, mapRowToJob } from "../lib/supabase/mappers.ts";
+
+const dbRow = {
+  id: "test-uuid-1",
+  slug: "test-role-db",
+  title: "Staff Designer",
+  specialization: "Design Systems",
+  domain: "FinTech B2B",
+  team: "Core Platform",
+  seniority: "Staff",
+  experience_min: 5,
+  experience_max: 8,
+  experience_label: "5–8 years",
+  location: "Bangalore",
+  work_mode: "Remote",
+  employment_type: "Full-time",
+  closes_at: "2026-11-15",
+  status: "Published",
+  application_url: "https://tally.so/r/test",
+  clarification_url: null,
+  contact_email: "test@example.com",
+  summary: "Staff level designer role",
+  description: "Detailed description here",
+  responsibilities: ["Lead design systems", "Mentor designers"],
+  requirements: ["5+ years experience", "Figma mastery"],
+  preferred_qualifications: ["Design token tooling"],
+  portfolio_requirements: ["Design systems showcase"],
+  why_join: ["High impact"],
+  hiring_process: [{ round: "Round 1", detail: "Portfolio" }],
+  application_instructions: "Apply online",
+};
+
+const mappedJob = mapRowToJob(dbRow);
+assert.strictEqual(mappedJob.id, "test-uuid-1");
+assert.strictEqual(mappedJob.slug, "test-role-db");
+assert.strictEqual(mappedJob.title, "Staff Designer");
+assert.strictEqual(mappedJob.status, "Open", "DB status 'Published' maps to frontend 'Open'");
+assert.strictEqual(mappedJob.experienceMin, 5);
+assert.strictEqual(mappedJob.experienceMax, 8);
+assert.strictEqual(mappedJob.workMode, "Remote");
+assert.strictEqual(mappedJob.employmentType, "Full-time");
+console.log("✓ Test 16 Passed: mapRowToJob correctly converts database row to frontend Job model.");
+
+// 17. mapJobToRow conversion
+const rowConverted = mapJobToRow(mappedJob);
+assert.strictEqual(rowConverted.slug, "test-role-db");
+assert.strictEqual(rowConverted.status, "Published", "Frontend 'Open' converts back to DB 'Published'");
+assert.strictEqual(rowConverted.experience_min, 5);
+assert.strictEqual(rowConverted.location, "Bangalore");
+console.log("✓ Test 17 Passed: mapJobToRow correctly converts frontend Job to DB row.");
+
+console.log("\nALL 17 TESTS PASSED SUCCESSFULLY!");
